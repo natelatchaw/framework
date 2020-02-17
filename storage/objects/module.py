@@ -36,7 +36,7 @@ class Module(File):
         # get relative import string
         self.relative_path = os.path.relpath(os.path.join(self.directory, self.name))
         self.relative_norm_path = os.path.normpath(self.relative_path)
-        self.relative_import_path = self.relative_norm_path.replace("\\", '.')
+        self.relative_import_path = self.relative_norm_path.replace(os.path.sep, '.')
 
     def get_property(self, property, fallback=None):
         """
